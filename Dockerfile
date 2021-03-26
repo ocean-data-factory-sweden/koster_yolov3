@@ -31,9 +31,9 @@ RUN echo $PYTHONPATH
 # Create a working directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-ADD https://api.github.com/repos/ocean-data-factory-sweden/koster_ml/git/refs/heads/master version.json
-RUN git clone -b master https://github.com/ocean-data-factory-sweden/koster_ml.git
-WORKDIR /usr/src/app/koster_ml
+ADD https://api.github.com/repos/ocean-data-factory-sweden/koster_yolov3/git/refs/heads/master version.json
+RUN git clone -b master https://github.com/ocean-data-factory-sweden/koster_yolov3.git
+WORKDIR /usr/src/app/koster_yolov3
 
 RUN ls -l
 
@@ -43,4 +43,4 @@ RUN pip install --upgrade gsutil
 RUN pip install --upgrade torchvision
 RUN pip install --upgrade protobuf
 RUN pip install --upgrade opencv-python
-WORKDIR /usr/src/app/koster_ml
+WORKDIR /usr/src/app/koster_yolov3
